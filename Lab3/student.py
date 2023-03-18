@@ -82,17 +82,11 @@ def main():
   print("\nStudent #1: "+student1.name)
   print("Student #2: "+student2.name, "\n")
   
-
   print("Student 1 = Student 2: ", student1.__eq__(student2), "\n")
-
   print("Student 2 = Student 1: ", student2.__eq__(student1), "\n")
-
   print("Student 1 < Student 2: ", student1.__lt__(student2), "\n")
-
   print("Student 2 < Student 1: ", student2.__lt__(student1), "\n")
-
   print("Student 1 >= Student 2: ", student1.__eg__(student2), "\n")
-
   print("Student 2 >= Student 1: ", student2.__eg__(student1), "\n")
 
 if __name__ == "__main__":
