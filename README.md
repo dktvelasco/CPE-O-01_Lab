@@ -2,11 +2,11 @@
 Programming Solutions to PostLab Problems     
 <br />
 Members:   
-Velasco   
-Aspril   
-Bautista  
-Bergano   
-Endaya   
-Felix   
-Maranan   
-Tatad   
+*Velasco   
+*Aspril   
+*Bautista  
+*Bergano   
+*Endaya   
+*Felix   
+*Maranan   
+*Tatad   
