@@ -1,160 +1,101 @@
+"""
+File: student.py
+Resources to manage a student's name and test scores.
+"""
+
 class Student(object):
-
-
-  # constructor to initialize the object
-
-  def __init__(self, name, number):
-
-
-    self.name = name
-
-    self.scores = []
-
-    for count in range(number):
-
-      self.scores.append(0)
-
-
-  # method to get the name
-
-  def getName(self):
-
-
-    return self.name
-
-
-  # method to set the score
-
-  def setScore(self, i, score):
-
-
-    self.scores[i - 1] = score
-
-
-  # method to get the score
-
-  def getScore(self, i):
-
-
-    return self.scores[i - 1]
-
-
-  # method to get the average
-
-  def getAverage(self):
-
-
-    return sum(self.scores) / len(self._scores)
-
-
-  # method to get the high score
-
-  def getHighScore(self):
-
-
-      return max(self.scores)
-
-
-  # method to print the object in string format
-
-  def __str__(self):
-
-
-    return "Name: " + self.name + "\nScores: " + " ".join(map(str, self.scores))
-
-
-  # checking for equality for the names
-
-  def __eq__(self,other):
-
-
-    if self.name == other.name:
-
-      return "Equal"
-
-    else:
-
-      return "Not Equal"
-
-
-  # checking for less than in names
-
-  def __lt__(self,other):
-
-
-    if self.name < other.name:
-
-      return "Less than"   
-
-    else:
-
-      return "Not less than"
-
-
-  # checking for greater than or equal to names
-
-  def __ge__(self,other):
-
-
-    if self.name >other.name:
-
-      return "Greater than"
-
-    elif self.name == other.name:
-
-      return "Both are equal"
-
-    else:
-
-      return "Not greater or equal"
-
-
-
-# main function
-
+    """Represents a student."""
+
+    def __init__(self, name, number):
+        """All scores are initially 0."""
+        self.name = name
+        self.scores = []
+        for count in range(number):
+            self.scores.append(0)
+
+    def getName(self):
+        """Returns the student's name."""
+        return self.name
+  
+    def setScore(self, i, score):
+        """Resets the ith score, counting from 1."""
+        self.scores[i - 1] = score
+
+    def getScore(self, i):
+        """Returns the ith score, counting from 1."""
+        return self.scores[i - 1]
+   
+    def getAverage(self):
+        """Returns the average score."""
+        return sum(self.scores) / len(self._scores)
+    
+    def getHighScore(self):
+        """Returns the highest score."""
+        return max(self.scores)
+ 
+    def __str__(self):
+        """Returns the string representation of the student."""
+        return "Name: " + self.name  + "\nScores: " + \
+               " ".join(map(str, self.scores))
+
+  
+    """comparing two student objects"""
+    def __eq__(self,other):
+       """test for equality"""
+       return self.name == other.name
+
+    def __lt__(self,other):
+      """test for less than"""
+      return self.name < other.name
+
+    def __gt__(self,other):
+      """test for greater than"""
+      return self.name > other.name
+
+        
+        
 def main():
-
-
-  # creating student object
-
-  student = Student("Ken", 5)
-
-  print(student)
-
+  """A simple test."""
+  student1 = Student("Don", 5)
+  print(student1)
   for i in range(1, 6):
+      student1.setScore(i, 100)
+  print(student1)
 
-    student.setScore(i, 100)
-
-    print(student)
-
-
-  # creating student2 object
-
-  student2= Student("Ayan",5)
-
+  student2 = Student("Tomas", 5)
+  print(student2)
+  for i in range(1, 6):
+      student2.setScore(i, 100)
   print(student2)
 
-  for i in range(1, 6):
+  print()
+  print("Student #1: "+student1.name)
+  print("Student #2: "+student2.name)
+  print()
 
-    student2.setScore(i, 100)
+  print("Is student 1 = student 2? " , end = '')
+  print(student1.__eq__(student2))
+  print()
 
-    print(student2)
+  print("Is student 2 = student 1? ", end = '')
+  print(student2.__lt__(student1))
+  print()
 
+  print("Is student 1 < student 2? ", end = '')
+  print(student1.__lt__(student2))
+  print()
 
-  # checking the equality methods
+  print("Is student 2 < student 1? ", end = '')
+  print(student2.__lt__(student1))
+  print()
 
-  print("student==student2" , student==student2)
+  print("Is student 1 >= student 2? ", end = '')
+  print(student1.__gt__(student2))
+  print()
 
-  print("student<student2",student<student2)
-
-  print("student2<student",student2<student)
-
-  print("student>=student2",student>=student2)
-
-
-
-# calling the main function
+  print("Is student 2 >= student 1? ", end = '')
+  print(student2.__gt__(student1))
+  print()
 
 if __name__ == "__main__":
-
-  main()
+    main()
