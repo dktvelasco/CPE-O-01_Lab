@@ -1,133 +1,160 @@
 class Student(object):
 
-def __init__(self, name, number):
 
-self.name = name
+  # constructor to initialize the object
 
-self.scores = []
+  def __init__(self, name, number):
 
-for count in range(number):
 
-self.scores.append(0)
+    self.name = name
 
- 
+    self.scores = []
 
-def getName(self):
+    for count in range(number):
 
- 
+      self.scores.append(0)
 
-return self.name
 
- 
+  # method to get the name
 
-def setScore(self, i, score):
+  def getName(self):
 
- 
 
-self.scores[i - 1] = score
+    return self.name
 
- 
 
-def getScore(self, i):
+  # method to set the score
 
- 
+  def setScore(self, i, score):
 
-return self.scores[i - 1]
 
- 
+    self.scores[i - 1] = score
 
-def getAverage(self):
 
- 
+  # method to get the score
 
-return sum(self.scores) / len(self._scores)
+  def getScore(self, i):
 
- 
 
-def getHighScore(self):
+    return self.scores[i - 1]
 
- 
 
-return max(self.scores)
+  # method to get the average
 
-def __eq__(self,student):
+  def getAverage(self):
 
-return self.name == student.name
 
- 
+    return sum(self.scores) / len(self._scores)
 
-def __ge__(self,student):
 
-return self.name == student.name or self.name>student.name
+  # method to get the high score
 
- 
+  def getHighScore(self):
 
-def __lt__(self,student):
 
-return self.name<student.name
+      return max(self.scores)
 
- 
 
-def __str__(self):
+  # method to print the object in string format
 
-return "Name: " + self.name + "\nScores: " + \
+  def __str__(self):
 
-" ".join(map(str, self.scores))
 
- 
+    return "Name: " + self.name + "\nScores: " + " ".join(map(str, self.scores))
 
- 
+
+  # checking for equality for the names
+
+  def __eq__(self,other):
+
+
+    if self.name == other.name:
+
+      return "Equal"
+
+    else:
+
+      return "Not Equal"
+
+
+  # checking for less than in names
+
+  def __lt__(self,other):
+
+
+    if self.name < other.name:
+
+      return "Less than"   
+
+    else:
+
+      return "Not less than"
+
+
+  # checking for greater than or equal to names
+
+  def __ge__(self,other):
+
+
+    if self.name >other.name:
+
+      return "Greater than"
+
+    elif self.name == other.name:
+
+      return "Both are equal"
+
+    else:
+
+      return "Not greater or equal"
+
+
+
+# main function
 
 def main():
 
-student = Student("Ken", 5)
 
-print(student)
+  # creating student object
 
-for i in range(1, 6):
+  student = Student("Ken", 5)
 
-student.setScore(i, 100)
+  print(student)
 
-print(student)
+  for i in range(1, 6):
 
- 
+    student.setScore(i, 100)
 
-print("\nSecond student")
+    print(student)
 
-student2 = Student("Ken", 5)
 
-print(student2)
+  # creating student2 object
 
- 
+  student2= Student("Ayan",5)
 
-print("\nThird student")
+  print(student2)
 
-student3 = Student("Amit", 5)
+  for i in range(1, 6):
 
-print(student3)
+    student2.setScore(i, 100)
 
- 
+    print(student2)
 
-print("\nChecking equal student1 and student 2")
 
-print(student.__eq__(student2))
+  # checking the equality methods
 
- 
+  print("student==student2" , student==student2)
 
-print("\nChecking equal student1 and student 3")
+  print("student<student2",student<student2)
 
-print(student.__eq__(student3))
+  print("student2<student",student2<student)
 
- 
+  print("student>=student2",student>=student2)
 
-print("\nChecking greater than equal student1 and student 3")
 
-print(student.__ge__(student3))
 
- 
-
-print("\nChecking less than student1 and student 3")
-
-print(student.__lt__(student3))
+# calling the main function
 
 if __name__ == "__main__":
+
+  main()
