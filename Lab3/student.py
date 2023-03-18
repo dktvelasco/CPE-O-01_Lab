@@ -37,16 +37,22 @@ class Student(object):
         """Returns the string representation of the student."""
         return "Name: " + self.name  + "\nScores: " + \
                " ".join(map(str, self.scores))
+    
+    """test for equality"""
+
+    """test for less than"""
+
+    """test for greater than"""
 
 def main():
     """A simple test."""
-    student = Student("Dom", 5)
+    student = Student("Don", 5)
     print(student)
     for i in range(1, 6):
         student.setScore(i, 100)
     print(student)
     
-    student2 = Student("Paul",5)
+    student2 = Student("Tomas",5)
     print(student)
     for i in range(1, 6):
         student2.setScore(i, 100)
@@ -55,7 +61,7 @@ def main():
     print(student==student2)
     print(student<student2)
     print(student2<student)
-    print(studen>=student2)
+    print(student>=student2)
 
 if __name__ == "__main__":
     main()
