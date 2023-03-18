@@ -42,21 +42,29 @@ class Student(object):
     """comparing two student objects"""
     def __eq__(self,other):
       """test for equality"""
-      return self.name == other.name
+      if self.name == other.name:
+          return "Equal."
+      else:
+          return "Not Equal."
 
     def __lt__(self,other):
       """test for less than"""
-      return self.name < other.name
+      if self.name < other.name:
+          return "Less than."
+      else:
+          return "Not Less than."
 
-    def __gt__(self,other):
+    def __eg__(self,other):
       """test for greater than"""
-      return self.name > other.name
-
-        
+      if self.name >= other.name:
+          return "Equal to or Greater than."
+      else:
+          return "Not Equal."    
         
 def main():
   """A simple test."""
   student1 = Student("Don", 5)
+  print()
   print(student1)
   for i in range(1, 6):
       student1.setScore(i, 100)
@@ -67,35 +75,25 @@ def main():
   for i in range(1, 6):
       student2.setScore(i, 100)
   print(student2)
-
-  print()
-  print("Student #1: "+student1.name)
-  print("Student #2: "+student2.name)
   print()
 
-  print("Is student 1 = student 2? " , end = '')
-  print(student1.__eq__(student2))
-  print()
+  print("="*50)
 
-  print("Is student 2 = student 1? ", end = '')
-  print(student2.__lt__(student1))
-  print()
+  print("\nStudent #1: "+student1.name)
+  print("Student #2: "+student2.name, "\n")
+  
 
-  print("Is student 1 < student 2? ", end = '')
-  print(student1.__lt__(student2))
-  print()
+  print("Student 1 = Student 2: ", student1.__eq__(student2), "\n")
 
-  print("Is student 2 < student 1? ", end = '')
-  print(student2.__lt__(student1))
-  print()
+  print("Student 2 = Student 1: ", student2.__eq__(student1), "\n")
 
-  print("Is student 1 >= student 2? ", end = '')
-  print(student1.__gt__(student2))
-  print()
+  print("Student 1 < Student 2: ", student1.__lt__(student2), "\n")
 
-  print("Is student 2 >= student 1? ", end = '')
-  print(student2.__gt__(student1))
-  print()
+  print("Student 2 < Student 1: ", student2.__lt__(student1), "\n")
+
+  print("Student 1 >= Student 2: ", student1.__eg__(student2), "\n")
+
+  print("Student 2 >= Student 1: ", student2.__eg__(student1), "\n")
 
 if __name__ == "__main__":
     main()
