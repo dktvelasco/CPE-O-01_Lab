@@ -1,2 +1,2 @@
 # CPE-O-01_PostLab
-Programming Problem Solutions to PostLab Activities
+Programming Solutions to PostLab Problems
