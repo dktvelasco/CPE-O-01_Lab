@@ -39,7 +39,7 @@ class Student(object):
                " ".join(map(str, self.scores))
 
   
-    """comparing two student objects"""
+    """equality methods"""
     def __eq__(self,other):
       """test for equality"""
       if self.name == other.name:
@@ -59,7 +59,7 @@ class Student(object):
       if self.name >= other.name:
           return "Equal to or Greater than."
       else:
-          return "Not Equal."    
+          return "Not Equal to or Greater than."    
         
 def main():
   """A simple test."""
@@ -77,7 +77,7 @@ def main():
   print(student2)
   print()
 
-  print("="*50)
+  print("="*30)
 
   print("\nStudent #1: "+student1.name)
   print("Student #2: "+student2.name, "\n")
