@@ -1,2 +1,2 @@
-# CPE-O-01_Lab3
-Programming Problem Solutions to Lab 3
+# CPE-O-01_Lab
+Programming Problem Solutions to PostLab Activities
