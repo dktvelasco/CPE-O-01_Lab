@@ -41,8 +41,8 @@ class Student(object):
   
     """comparing two student objects"""
     def __eq__(self,other):
-       """test for equality"""
-       return self.name == other.name
+      """test for equality"""
+      return self.name == other.name
 
     def __lt__(self,other):
       """test for less than"""
