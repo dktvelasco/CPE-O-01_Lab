@@ -84,3 +84,17 @@ def main():
     for i in range(1, 6):
         student5.setScore(i, 75)
     students = [student1, student2, student3, student4, student5]
+    
+ print("🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦""\n🐦  Sorted list of all students 🐦\n🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦\n")
+
+    for student in students:
+        print(student)
+        print("="* 30)
+    print("Unsorted list of all students:")
+    print("+" + "-"*28 + "+")
+    random.shuffle(students)
+    for student in students:
+        print(student)
+
+if name == "main":
+    main()
