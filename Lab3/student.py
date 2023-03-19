@@ -60,34 +60,41 @@ class Student(object):
           return "Equal to or Greater than."
       else:
           return "Not Equal to or Greater than."    
-        
+    
+     def shuffle(self):
+        """Shuffles the student's scores in place."""
+        random.shuffle(self.scores)
+
+import random
+
 def main():
-  """A simple test."""
-  student1 = Student("Don", 5)
-  print()
-  print(student1)
-  for i in range(1, 6):
-      student1.setScore(i, 100)
-  print(student1)
+    student1 = Student("Don ", 5)
+    for i in range(1, 6):
+        student1.setScore(i, 98)
+    student2 = Student("Philip ", 5)
+    for i in range(1, 6):
+    student2.setScore(i, 87)
+    student3 = Student("Protacio ", 5)
+    for i in range(1, 6):
+        student3.setScore(i, 95)
+    student4 = Student("Rizal ", 5)
+    for i in range(1, 6):
+        student4.setScore(i, 85 ) 
+    student5 = Student("Tomas ", 5)
+    for i in range(1, 6):
+        student5.setScore(i, 75)
+    students = [student1, student2, student3, student4, student5]
+    
+ print("🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦""\n🐦  Sorted list of all students 🐦\n🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦\n")
 
-  student2 = Student("Tomas", 5)
-  print(student2)
-  for i in range(1, 6):
-      student2.setScore(i, 100)
-  print(student2)
-  print()
+    for student in students:
+        print(student)
+        print("="* 30)
+    print("Unsorted list of all students:")
+    print("+" + "-"*28 + "+")
+    random.shuffle(students)
+    for student in students:
+        print(student)
 
-  print("="*30)
-
-  print("\nStudent #1: "+student1.name)
-  print("Student #2: "+student2.name, "\n")
-  
-  print("Student 1 = Student 2: ", student1.__eq__(student2), "\n")
-  print("Student 2 = Student 1: ", student2.__eq__(student1), "\n")
-  print("Student 1 < Student 2: ", student1.__lt__(student2), "\n")
-  print("Student 2 < Student 1: ", student2.__lt__(student1), "\n")
-  print("Student 1 >= Student 2: ", student1.__eg__(student2), "\n")
-  print("Student 2 >= Student 1: ", student2.__eg__(student1), "\n")
-
-if __name__ == "__main__":
+if name == "main":
     main()
