@@ -73,3 +73,14 @@ def main():
         student1.setScore(i, 98)
     student2 = Student("Philip ", 5)
     for i in range(1, 6):
+    student2.setScore(i, 87)
+    student3 = Student("Protacio ", 5)
+    for i in range(1, 6):
+        student3.setScore(i, 95)
+    student4 = Student("Rizal ", 5)
+    for i in range(1, 6):
+        student4.setScore(i, 85 ) 
+    student5 = Student("Tomas ", 5)
+    for i in range(1, 6):
+        student5.setScore(i, 75)
+    students = [student1, student2, student3, student4, student5]
