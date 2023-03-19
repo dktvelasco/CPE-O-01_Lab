@@ -37,7 +37,7 @@ class Bank:
         
         return "\n".join([str(v) for (k, v) 
                     in sorted(self.accounts.items(),
-                           key=lambda cv: cv[1].getName())]
+                           key=lambda cv: cv[1].getName())])
 
     def makeKey(self, name, pin):
         """Returns a key for the account."""
