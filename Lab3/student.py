@@ -60,8 +60,7 @@ class Student(object):
           return "Equal to or Greater than."
       else:
           return "Not Equal to or Greater than."    
-    
-     def shuffle(self):
+    def shuffle(self):
         """Shuffles the student's scores in place."""
         random.shuffle(self.scores)
 
@@ -73,7 +72,7 @@ def main():
         student1.setScore(i, 98)
     student2 = Student("Philip ", 5)
     for i in range(1, 6):
-    student2.setScore(i, 87)
+        student2.setScore(i, 87)
     student3 = Student("Protacio ", 5)
     for i in range(1, 6):
         student3.setScore(i, 95)
@@ -84,8 +83,7 @@ def main():
     for i in range(1, 6):
         student5.setScore(i, 75)
     students = [student1, student2, student3, student4, student5]
-    
- print("🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦""\n🐦  Sorted list of all students 🐦\n🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦\n")
+    print("🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦""\n🐦  Sorted list of all students 🐦\n🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦🐦\n")
 
     for student in students:
         print(student)
@@ -96,5 +94,5 @@ def main():
     for student in students:
         print(student)
 
-if name == "main":
+if __name__ == "__main__":
     main()
