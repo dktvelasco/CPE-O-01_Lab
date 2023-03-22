@@ -36,5 +36,5 @@ def main():
         print(sentence())
 
 # The entry point for program execution
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
