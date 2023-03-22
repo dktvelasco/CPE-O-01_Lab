@@ -3,22 +3,14 @@ File: median.py
 Prints the median of a set of numbers in a file.
 """
 
-fileName = input("\nEnter the file name: ")
-f = open(fileName, 'r')
-    
-# Input the text, convert it to numbers, and
-# add the numbers to a list
-numbers = []
-for line in f:
-    words = line.split()
-    for word in words:
-        numbers.append(float(word))
+file_name = input("Enter the name of the file containing the numbers: ")
+with open(file_name, 'r') as file:
+    numbers = [float(line.strip()) for line in file]
 
-# Sort the list and print the number at its midpoint
 numbers.sort()
 midpoint = len(numbers) // 2
-print("\nThe median is", end=" ",)
 if len(numbers) % 2 == 1:
-    print(numbers[midpoint], "\n")
+    median = numbers[midpoint]
 else:
-    print((numbers[midpoint] + numbers[midpoint - 1]) / 2, "\n")
+    median = (numbers[midpoint] + numbers[midpoint - 1]) / 2
+    print(f" The median of the numbers in {file_name} is {median:.2f}.")
