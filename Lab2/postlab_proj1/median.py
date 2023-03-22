@@ -2,9 +2,8 @@
 File: median.py
 Prints the median of a set of numbers in a file.
 """
-import numpy as np
 
-fileName = np.loadtxt.input("Enter the file name: ")
+fileName = input("Enter the file name: ")
 f = open(fileName, 'r')
     
 # Input the text, convert it to numbers, and
