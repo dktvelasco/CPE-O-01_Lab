@@ -3,7 +3,7 @@ File: mode.py
 Prints the mode of a set of numbers in a file.
 """
 
-fileName = input("Enter the file name: ")
+fileName = input("\nEnter the file name: ")
 f = open(fileName, 'r')
     
 # Input the text, convert its to words to uppercase, and
@@ -32,7 +32,7 @@ for word in words:
 theMaximum = max(theDictionary.values())
 for key in theDictionary:
     if theDictionary[key] == theMaximum:
-        print("The mode is", key)
+        print("\nThe mode is", key, "\n")
         break
         
     

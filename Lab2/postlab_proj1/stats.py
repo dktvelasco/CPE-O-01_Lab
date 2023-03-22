@@ -1,34 +1,23 @@
-def mean(s):
-    if len(s) == 0:
-        return 0
-    else:
-        return sum(s) / len(s)
+import mean
+import median
+import mode
 
-def median(s):
-    if len(s) == 0:
-        return 0
-    ss = sorted(s)
-    if len(s) % 2 == 0:
-        return (ss[len(s)//2 - 1] + ss[len(s)//2]) / 2
-    else:
-        return ss[len(s)//2]
+class stats:
+    def mean():
+        lst = []
+        n = int(input("Enter number of elements : "))
+        
+        for i in range(0, n):
+            ele = int(input())
+            lst.append(ele)
+            
+    def mean(lst):
+        Sum = sum(lst)
+        average= Sum/len(lst)
+        print (average)
 
-def mode(s):
-    count = {}
-    maxcount = 0
-    maxelem = None
-    for n in s:
-        count[n] = count.get(n, 0) + 1
-        if count[n] > maxcount:
-            maxcount = count[n]
-            maxelem = n
-    return maxelem
+mean()
+median()
+mode()
 
-def main():
-    userList = [3, 1, 7, 1, 4, 10]
-    print("List:", userList)
-    print("Mode:", mode(userList))
-    print("Median:", median(userList))
-    print("Mean:", mean(userList))
-
-main()
+pass

@@ -3,7 +3,7 @@ File: median.py
 Prints the median of a set of numbers in a file.
 """
 
-fileName = input("Enter the file name: ")
+fileName = input("\nEnter the file name: ")
 f = open(fileName, 'r')
     
 # Input the text, convert it to numbers, and
@@ -17,8 +17,8 @@ for line in f:
 # Sort the list and print the number at its midpoint
 numbers.sort()
 midpoint = len(numbers) // 2
-print("The median is", end=" ")
+print("\nThe median is", end=" ",)
 if len(numbers) % 2 == 1:
-    print(numbers[midpoint])
+    print(numbers[midpoint], "\n")
 else:
-    print((numbers[midpoint] + numbers[midpoint - 1]) / 2)
+    print((numbers[midpoint] + numbers[midpoint - 1]) / 2, "\n")
