@@ -1,34 +1,31 @@
-def mean(s):
-    if len(s) == 0:
-        return 0
-    else:
-        return sum(s) / len(s)
+"""
+File: stats.py
+Prints the mean, median, mode of a set of numbers in a file.
+"""
+from mean import mean
+from median import median
+from mode import mode
 
-def median(s):
-    if len(s) == 0:
-        return 0
-    ss = sorted(s)
-    if len(s) % 2 == 0:
-        return (ss[len(s)//2 - 1] + ss[len(s)//2]) / 2
-    else:
-        return ss[len(s)//2]
-
-def mode(s):
-    count = {}
-    maxcount = 0
-    maxelem = None
-    for n in s:
-        count[n] = count.get(n, 0) + 1
-        if count[n] > maxcount:
-            maxcount = count[n]
-            maxelem = n
-    return maxelem
-
+# Simple Test Run
 def main():
-    userList = [3, 1, 7, 1, 4, 10]
-    print("List:", userList)
-    print("Mode:", mode(userList))
-    print("Median:", median(userList))
-    print("Mean:", mean(userList))
+    print("\n===== M E 2 M O   F I N D E R ! =====")
+    fileName = input("\nEnter the file name: ")
+    with open(fileName, 'r')as f:
+        # Input the text, convert it to numbers, and
+        # add the numbers to a list
+        for line in f:
+            numbers = [float(line.strip())for line in f]
+        numbers = []
+    with open('numbers.txt') as f:
+        for line in f:
+            numbers.append(int(line.strip()))
+    
+    print("\nNumbers: ", numbers, "\n")
+    print("Mean: ", f'{mean(numbers):.2f}')
+    print("Median: ", f'{median(numbers):.2f}')
+    print("Mode: ", f'{mode(numbers):.2f}', "\n")
+    print("===== program terminated =====\n")
 
-main()
+# The entry point for program execution
+if __name__ == '__main__':
+    main()
