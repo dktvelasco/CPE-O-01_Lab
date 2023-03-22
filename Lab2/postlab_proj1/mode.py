@@ -8,4 +8,4 @@ with open(file_name, 'r') as f:
     words = [word.upper() for line in f for word in line.split()]
     word_count = {word: words.count(word) for word in set(words)}
     mode = max(word_count, key=word_count.get)
-    print("The mode is", mode)
+    print(f"The mode of the numbers in {file_name} is {mode:.2f}.")
