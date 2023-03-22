@@ -3,9 +3,18 @@ File: mode.py
 Prints the mode of a set of numbers in a file.
 """
 
-file_name = input("Enter the file name: ")
-with open(file_name, 'r') as f:
-    words = [word.upper() for line in f for word in line.split()]
-    word_count = {word: words.count(word) for word in set(words)}
-    mode = max(word_count, key=word_count.get)
-    print(f"The mode of the numbers in {file_name} is {mode:.2f}.")
+def mode(numbers):
+    if len(numbers) == 0:
+        return 0
+    
+    mode_count = 0
+    mode_value = numbers[0]
+    
+    for value in numbers:
+        count = numbers.count(value)
+        if count > mode_count:
+            mode_count = count
+            mode_value = value
+    
+    return mode_value
+    
