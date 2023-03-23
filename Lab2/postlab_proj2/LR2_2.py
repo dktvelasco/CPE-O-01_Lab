@@ -14,4 +14,12 @@ while True:
     if line_num == '0':
         break
     try:
-        line_num = int(line_num)
+        
+           line_num = int(line_num)
+        if line_num < 1 or line_num > num_lines:
+            print("Invalid line number. Please enter a valid line number.")
+        else:
+            print(lines[line_num - 1])
+    except ValueError:
+        print("Invalid input. Please enter a valid line number.")
+print("Goodbye!")
