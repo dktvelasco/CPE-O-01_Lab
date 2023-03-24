@@ -1,1 +1,4 @@
 Assigned Tasks:
+postlab_proj1: Maranan, Tatad, Velasco
+postlab_proj2: Bautista, Bergano
+postlab_proj3: Aspril, Endaya, Felix
