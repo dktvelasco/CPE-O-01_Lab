@@ -2,7 +2,7 @@
 It is not optimised for a quality game it simply
 generates random moves and checks the results of
 a move for a winning line. Exposed functions are:
-newGame()
+__init__()
 saveGame()
 restoreGame()
 userMove()
