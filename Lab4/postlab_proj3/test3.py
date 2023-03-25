@@ -32,4 +32,20 @@ class TestOXOArgsUI(unittest.TestCase):
                 mock_computer.assert_not_called()
                 self.assertEqual(result, 'D')
     
-    
+    @patch('builtins.input', side_effect=['1', 'q'])
+    def test_main_new(self, mock_input):
+        with patch('oxo_args_ui.executeChoice') as mock_execute:
+            oxo_args_ui.main(['-n'])
+            mock_execute.assert_called_once_with(1)
+    @patch('builtins.input', side_effect=['2', 'q'])
+    def test_main_resume(self, mock_input):
+        with patch('oxo_args_ui.executeChoice') as mock_execute:
+            oxo_args_ui.main(['-r'])
+            mock_execute.assert_called_once_with(2)
+    @patch('builtins.input', side_effect=['3', 'q'])
+    def test_main_menu(self, mock_input):
+        with patch('oxo_args_ui.executeChoice') as mock_execute:
+            oxo_args_ui.main([])
+            mock_execute.assert_called_once_with(3)
+if __name__ == '__main__':
+    unittest.main()
