@@ -61,36 +61,36 @@ class Game:
         else:
             return ""
 
-    def computerMove(game):
-        cell = _generateMove(game)
+    def computerMove(self):
+        cell = self.generateMove()
         if cell == -1:
             return 'D'
-        game[cell] = 'O'
-        if _isWinningMove(game):
+        self.board[cell] = 'O'
+        if self.isWinningMove('O'):
             return 'O'
         else:
             return ""
 
-    def test():
+    def test(self):
         result = ""
-        game = newGame()
         while not result:
-            print(game)
+            print(self)
             try:
-               result = userMove(game, _generateMove(game))
-            except ValueError:
+                cell = int(input("Make your move: "))
+                result = self.userMove(cell)
+            except (ValueError, IndexError):
                 print("Oops, that shouldn't happen")
             if not result:
-                result = computerMove(game)
-
+                result = self.computerMove()
+                
             if not result: continue
             elif result == 'D':
                 print("Its a draw")
             else:
                 print("Winner is:", result)
-            print(game)
+            print(self.board)
 
 if __name__ == "__main__":
-    test()
-
-            
+    game = Game()
+    game.test()
+    game.saveGame()
