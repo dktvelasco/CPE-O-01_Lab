@@ -32,31 +32,31 @@ class Game:
         except IOError:
             self.board = [" "]*9
 
-    def _generateMove(game):
+   def _generateMove(game):
         ''' generate a random cell from thiose available.
             If all cells are used return -1'''
         options = [i for i in range(len(game)) if  game[i] == " "]
         if options:
-           return random.choice(options)
+            return random.choice(options)
         else: return -1
-
-    def _isWinningMove(game):
+        
+    def _isWinningMove(self, player):
         wins = ((0,1,2), (3,4,5), (6,7,8),
                 (0,3,6), (1,4,7), (2,5,8),
                 (0,4,8), (2,4,6))
 
         for a,b,c in wins:
-            chars = game[a] + game[b] + game[c]
-            if chars == 'XXX' or chars == 'OOO':
+            chars = self.board[a] + self.board[b] + self.board[c]
+            if chars == player*3:
                 return True
         return False
 
-    def userMove(game,cell):
-        if game[cell] != ' ':
+    def userMove(self,cell):
+        if self.board[cell] != ' ':
             raise ValueError('Invalid cell')
         else:
-            game[cell] = 'X'
-        if _isWinningMove(game):
+            self.board[cell] = 'X'
+        if self.isWinningMove('X'):
             return 'X'
         else:
             return ""
